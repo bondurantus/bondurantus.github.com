@@ -1,0 +1,34 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+#red-line {
+  clear: both;
+  width: 100%;
+  border-bottom:4px solid #ff0000;
+}
+
+header,
+#main,
+footer {
+  margin: 0 auto 0 auto; /* auto means to center */
+  width: 1000px;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
