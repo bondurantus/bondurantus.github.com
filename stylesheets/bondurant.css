@@ -32,3 +32,12 @@ nav {
   bottom: 0;
   right: 0;
 }
+
+a {
+color: #000000;
+}
+
+a:hover {
+color: #ffffff;
+background-color: #D100B8;
+}
