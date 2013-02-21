@@ -24,7 +24,7 @@ header,
 #main,
 footer {
   margin: 0 auto 0 auto; /* auto means to center */
-  width: 1000px;
+  width: 890px;
 }
 
 nav {
