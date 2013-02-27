@@ -69,3 +69,5 @@ nav a {
 #about.active {
   max-height: 400px;
 }
+
+.italic { font-style: italic; }
