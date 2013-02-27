@@ -7,6 +7,7 @@
 
 html {
   font-size: 100%;
+  line-height: 1.5em;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
 }
 
 header,
+#about,
 #main,
 footer {
   margin: 0 auto 0 auto; /* auto means to center */
@@ -40,4 +42,30 @@ color: #000000;
 a:hover {
 color: #ffffff;
 background-color: #FF0000;
+}
+
+/* make the hover background extend past the italic font. */
+nav a {
+  padding: 0 1px;
+}
+
+/* paragraph tags inside of the About section */
+#about p {
+  margin: 1.5em 0 ;
+  font-style: italic;
+}
+
+#about {
+  max-height: 0px;
+  overflow-y: hidden;
+  background-color: #ddd;
+  padding: 0 0.75em;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+
+}
+
+#about.active {
+  max-height: 400px;
 }
