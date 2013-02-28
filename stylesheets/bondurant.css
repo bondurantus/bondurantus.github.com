@@ -52,7 +52,6 @@ nav a {
 /* paragraph tags inside of the About section */
 #about p {
   margin: 1.5em 0 ;
-  font-style: italic;
 }
 
 #about {
@@ -70,4 +69,5 @@ nav a {
   max-height: 400px;
 }
 
+/* font style for the IMAGES subpages */
 .italic { font-style: italic; }
