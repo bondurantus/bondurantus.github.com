@@ -19,6 +19,7 @@ body {
   clear: both;
   width: 100%;
   border-bottom:4px solid #ff0000;
+  line-height: 4px;
 }
 
 header,
@@ -29,10 +30,12 @@ footer {
   width: 890px;
 }
 
+header {
+  text-align: center;
+}
+
 nav {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  margin: 0.5em 0 0.5em;
 }
 
 a {
@@ -71,3 +74,37 @@ nav a {
 
 /* font style for the IMAGES subpages */
 .italic { font-style: italic; }
+
+
+#main {
+  overflow-y: auto;
+}
+
+#left, #right {
+  float: left;
+  width: 48%;
+  margin: 1em 0;
+  text-align: center;
+}
+
+#left {
+  margin-right: 4%;
+}
+
+#left img, #right img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.caption {
+  font-style: italic;
+}
+
+.images .image {
+  display: none;
+  -webkit-transition: all 1s;
+}
+
+.images .image.active {
+  display: block;
+}
