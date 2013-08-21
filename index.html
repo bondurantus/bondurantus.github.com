@@ -151,7 +151,7 @@
         var obj = _.object(_.map(subst, splitEquals));
 
         if (!_.has(obj, 'left') && !_.has(obj, 'right')) {
-          obj = updateHash({'left':1,'right':1});
+          obj = {'left':1,'right':1};
         }
         return obj;
       }
@@ -171,32 +171,52 @@
         return callback(container, active.index(), count);
       }
 
+      var setActive = function(container, i) {
+        container.find('.image').eq(i).addClass('active');
+        container.find('.image').eq(i).siblings().removeClass('active');
+      }
+
       var getNext = function (container, index, count) {
-        return container.find('.image').eq((index+1) % count);
+        return (index+1) % count;
       }
 
       var incrementCounter = function (container, number) {
         container.find('.current').html(number+1);
       }
 
-      var goToNext = function() {
-        var next = getActive($(this), getNext);
-        incrementCounter($(this), next.index());
-        $(next).addClass('active');
 
-        $(next).siblings().removeClass('active');
+      var goToNext = function() {
+        var nextIndex = getActive($(this), getNext);
+        var next = $(this).find('.image').eq(nextIndex);
+        incrementCounter($(this), nextIndex);
+
+        console.log(nextIndex, next)
+
+        setActive($(this), nextIndex);
 
         window.location.hash = updateHash(parseHash(window.location.hash));
 
         return false;
       }
 
+      var setImagesFromHash = function () {
+        var parsed = parseHash(window.location.hash);
+
+        _.each(parsed, function(v,k) {
+          setActive($('#'+k), parseInt(v)-1);
+          incrementCounter($('#' + k), parseInt(v)-1);
+        });
+      }
+
       _.forEach(['#left','#right'], function(div) {
         var images_count = $(div).find('.image').length;
         $(div).find('.image').first().addClass('active');
         $(div).find('.total').html(images_count);
-        incrementCounter($(div), 0);
         $(div).click(goToNext);
+
+        if (window.location.hash.substring(1).length > 0) {
+          setImagesFromHash();
+        }
       });
 
     });
