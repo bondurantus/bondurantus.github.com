@@ -136,6 +136,7 @@
   <script src="/javascripts/underscore.min.js"></script>
   <script>
     $(document).ready(function () {
+      var imageHeight = 570;
       $('#about-link').on('click', function () {
         $('#about').toggleClass('active');
         return false;
@@ -174,6 +175,7 @@
       var setActive = function(container, i) {
         container.find('.image').eq(i).addClass('active');
         container.find('.image').eq(i).siblings().removeClass('active');
+        container.find('.images').css('top', (i)*imageHeight * -1);
       }
 
       var getNext = function (container, index, count) {
@@ -211,6 +213,7 @@
       _.forEach(['#left','#right'], function(div) {
         var images_count = $(div).find('.image').length;
         $(div).find('.image').first().addClass('active');
+        $(div).find('.images').css('top',imageHeight*2* -1);
         $(div).find('.total').html(images_count);
         $(div).click(goToNext);
 
