@@ -27,7 +27,7 @@ header,
 #main,
 footer {
   margin: 0 auto 0 auto; /* auto means to center */
-  width: 890px;
+  width: 1000px;
 }
 
 header {
