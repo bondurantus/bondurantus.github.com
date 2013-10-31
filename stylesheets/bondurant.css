@@ -129,3 +129,67 @@ nav a {
   transition: all .5s;
   width: 100%;
 }
+
+/* CRENELLATED STYLES */
+
+#crenellated {
+  font-family: "Courier New", Courier, monospace;
+  background: #DF2222;
+  color: #fff;
+}
+
+#crenellated header {
+  margin-bottom: 4em;
+}
+
+#crenellated header img {
+  max-width: 100%;
+}
+
+#crenellated h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: 2.6em;
+}
+
+#crenellated h2 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8em;
+}
+
+#crenellated h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+.product-blurb {
+  position: relative;
+  max-width: 1000px;
+  margin: 1em auto 1em;
+  clear: both;
+  overflow-y: auto;
+}
+
+.product-blurb>div {
+  width: 48%;
+  float: left;
+  position: relative;
+}
+
+.product-image img {
+  max-width: 100%;
+}
+
+.product-blurb>div:last-child {
+  margin-left: 4%;
+}
+
+#crenellated .product-info {
+  background: #fff;
+  color: #222;
+  padding: 1em;
+}
