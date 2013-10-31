@@ -163,15 +163,19 @@ nav a {
   margin: 0;
   padding: 0;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 
 .product-blurb {
   position: relative;
   max-width: 1000px;
-  margin: 1em auto 1em;
+  margin: 1em auto 2.5em;
   clear: both;
   overflow-y: auto;
+}
+
+.product-blurb p {
+  margin: 0.1em 0;
 }
 
 .product-blurb>div {
