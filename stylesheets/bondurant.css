@@ -133,7 +133,7 @@ nav a {
 /* CRENELLATED STYLES */
 
 #crenellated {
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Arvo', serif;
   background: #DF2222;
   color: #fff;
 }
@@ -188,8 +188,22 @@ nav a {
   max-width: 100%;
 }
 
-.product-blurb>div:last-child {
+.product-blurb>div:nth-child(2) {
   margin-left: 4%;
+}
+
+.product-blurb .order-this {
+  text-align: center;
+  display: inline-block;
+  margin: 0.5em auto;
+  padding: 0.45em 0.75em;
+  background: #222;
+  color: #f9e71d;
+}
+
+.product-blurb .order-this:hover {
+  background: #f9e71d;
+  color: #222;
 }
 
 #crenellated .product-info {
@@ -203,7 +217,7 @@ nav a {
   text-decoration: underline;
 }
 
-#crenellated #purchasing-info {
+#crenellated #ordering-info {
   width: 550px;
   margin: 1em auto;
 }
