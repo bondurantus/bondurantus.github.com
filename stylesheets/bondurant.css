@@ -15,11 +15,16 @@ body {
   padding: 0;
 }
 
-#red-line {
+#red-line,
+#white-line {
   clear: both;
   width: 100%;
-  border-bottom:4px solid #ff0000;
+  border-bottom: 4px solid #ff0000;
   line-height: 4px;
+}
+
+#white-line {
+  border-bottom-color: #fff;
 }
 
 header,
@@ -139,7 +144,7 @@ nav a {
 }
 
 #crenellated header {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
 }
 
 #crenellated header img {
@@ -148,8 +153,6 @@ nav a {
 
 #crenellated h1 {
   text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 0.04em;
   font-size: 2.6em;
 }
 
@@ -166,6 +169,11 @@ nav a {
   font-size: 0.9em;
 }
 
+#crenellated a:hover {
+  background-color: #fff;
+  color: #DF2222;
+}
+
 #crenellated p {
   margin: 0.1em 0;
 }
@@ -173,7 +181,7 @@ nav a {
 .product-blurb {
   position: relative;
   max-width: 1000px;
-  margin: 1em auto 2.5em;
+  margin: 2em auto;
   clear: both;
   overflow-y: auto;
 }
@@ -193,17 +201,33 @@ nav a {
 }
 
 .product-blurb .order-this {
-  text-align: center;
+  text-decoration: none;
+  float: right;
   display: inline-block;
-  margin: 0.5em auto;
+  margin: 0.5em auto 0;
   padding: 0.45em 0.75em;
   background: #222;
   color: #f9e71d;
 }
 
+#crenellated #ordering-info,
 .product-blurb .order-this:hover {
   background: #f9e71d;
   color: #222;
+}
+
+#crenellated #ordering-info {
+  padding: 1em;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 550px;
+  margin-left: -275px;
+  display: none;
+}
+
+#crenellated.popover #ordering-info {
+  display: block;
 }
 
 #crenellated .product-info {
@@ -217,7 +241,22 @@ nav a {
   text-decoration: underline;
 }
 
-#crenellated #ordering-info {
-  width: 550px;
-  margin: 1em auto;
+#crenellated #ordering-info p {
+  margin: 0.5em 0;
+}
+
+.small {
+  font-size: 12px;
+}
+
+#crenellated footer {
+  font-size: 12px;
+  text-align: center;
+  margin: 2em auto;
+}
+
+#crenellated footer p {
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
 }

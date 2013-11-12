@@ -8,6 +8,7 @@
   <meta name="author" content="Loren Bondurant">
   <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="stylesheets/bondurant.css"/>
+  <script src="/javascripts/jquery.min.js"></script>
 </head>
 <body id="crenellated">
   <script type="text/javascript">
@@ -26,6 +27,8 @@
     <h1>Crenellated Comics</h1>
   </header>
 
+  <div id="white-line">&nbsp;</div>
+
   <div class="product-blurb">
     <div class="product-image">
       <img src="#">
@@ -38,8 +41,9 @@
       <p>12 pp, black & white</p>
       <p>8.5" x 5.5"</p>
       <p>Staple Binding</p>
+
+      <a href="#ordering-info" class="order-this">Order this</a>
     </div>
-    <a href="#ordering-info" class="order-this">Order this</a>
   </div>
 
   <div class="product-blurb">
@@ -53,19 +57,38 @@
       <p>7" x 5"</p>
       <p>four cards</p>
       <p>Note: oversized. First Class Letter-rate stamp required to send. </p>
+
+      <a href="#ordering-info" class="order-this">Order this</a>
     </div>
-    <a href="#ordering-info" class="order-this">Order this</a>
   </div>
 
   <div id="ordering-info">
     <h2 class="underline">Ordering information</h2>
     <p>Please <a href="mailto:loren.bondurant@gmail.com">email me</a> to request either item on this page. I'll be more than happy to send them via USPS. (Limit three items per order.) Please specify what you would like and where to have them sent. Thanks.<p>
-    <p>If you wish to donate money, I recommend using this service: <a href="https://square.com/cash">https://square.com/cash</a>. Donate no more than $3 per comic book or postcard set.</p>
+    <p class="small">If you wish to donate money, I recommend using this service: <a href="https://square.com/cash">https://square.com/cash</a>. Donate no more than $3 per comic book or postcard set.</p>
     <p>Click anywhere outside of this box to make it disappear.</p>
   </div>
 
-</body>
-  <footer style="text-align:center;">
-    <small><a href="mailto:loren.bondurant@gmail.com">loren.bondurant@gmail.com</a></p></small>
+  <footer>
+    <p><a href="mailto:loren.bondurant@gmail.com">loren.bondurant@gmail.com</a></p>
+    <p><a href="http://lorenbondurant.us">lorenbondurant.us</a></p>
   </footer>
+  <script>
+  $(function () {
+    $('*:not(#ordering-info),*:not(.order-this),*:not(a)').on('click', function (event) {
+      if ($('body').hasClass("popover")) {
+        $('body').removeClass("popover");
+      }
+      // event.stopImmediatePropagation();
+    });
+
+    $('.order-this').click(function (event) {
+      $('body').addClass('popover');
+      console.log('hi')
+      event.stopImmediatePropagation();
+      return false;
+    });
+  })
+  </script>
+</body>
 </html>
