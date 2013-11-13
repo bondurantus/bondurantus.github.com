@@ -181,7 +181,7 @@ nav a {
 .product-blurb {
   position: relative;
   max-width: 1000px;
-  margin: 2em auto;
+  margin: 2em auto 4em;
   clear: both;
   overflow-y: auto;
 }
@@ -194,6 +194,9 @@ nav a {
 
 .product-image img {
   max-width: 100%;
+  max-height: 500px;
+  margin: 0 auto;
+  display: block;
 }
 
 .product-blurb>div:nth-child(2) {
