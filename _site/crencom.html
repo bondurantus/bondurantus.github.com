@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Crenellated Comics</title>
+  <meta name="description" content="COTC comics">
+  <meta name="author" content="Loren Bondurant">
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="stylesheets/bondurant.css"/>
+  <link rel="stylesheet" href="stylesheets/crenellated.css"/>
+  <script src="/javascripts/jquery.min.js"></script>
+</head>
+<body id="crenellated">
+  <script type="text/javascript">
+      window._idl = {};
+      _idl.variant = "modal";
+      (function() {
+          var idl = document.createElement('script');
+          idl.type = 'text/javascript';
+          idl.async = true;
+          idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+          document.getElementsByTagName('body')[0].appendChild(idl);
+      })();
+  </script>
+  <header>
+    <img src="/images/crenellated/crenellated.png">
+    <h1>C r e n e l l a t e d C o m i c s</h1>
+  </header>
+
+  <div id="white-line">&nbsp;</div>
+
+  <div class="product-blurb">
+    <div class="product-image">
+      <img src="/images/crenellated/no1.png">
+    </div>
+
+    <div class="product-info">
+      <h2>Annals of Aesthetics no.1</h2>
+      <h3>by Loren Bondurant</h3>
+
+      <p>12 pp, black & white</p>
+      <p>8.5" x 5.5"</p>
+      <p>Staple Binding</p>
+
+      <a href="#ordering-info" class="order-this">Order this</a>
+    </div>
+  </div>
+
+  <div class="product-blurb">
+    <div class="product-image">
+      <img src="/images/crenellated/postcards.png">
+    </div>
+
+    <div class="product-info">
+      <h2>Four Postcards</h2>
+      <h3>by Loren Bondurant</h3>
+      <p>7" x 5"</p>
+      <p>four cards</p>
+      <p><i>Note: oversized. First Class Letter-rate stamp required to send.</i></p>
+
+      <a href="#ordering-info" class="order-this">Order these</a>
+    </div>
+  </div>
+
+  <div id="ordering-info">
+    <h2 class="underline">Ordering information</h2>
+    <p><a href="mailto:loren.bondurant@gmail.com?&subject=I Want Crenellated Comics&body=My address is...">Email me</a> to request either item on this page. I'll be pleased to send them to you via USPS. (Limit three items per order.) Just specify what you would like and where to have them sent.<p>
+    <p class="small">If you wish to donate money, I recommend using this service: <a href="https://square.com/cash">https://square.com/cash</a>. Donate no more than $3 per comic book or postcard set. <a href="mailto:loren.bondurant@gmail.com?&subject=$3&body=My address is...&cc=cash@square.com">Donate with Square Cash.</a></p>
+    <p>Click anywhere outside of this box to make it disappear.</p>
+  </div>
+
+  <footer>
+    <p><a href="mailto:loren.bondurant@gmail.com">loren.bondurant@gmail.com</a></p>
+    <p><a href="http://lorenbondurant.us">lorenbondurant.us</a></p>
+  </footer>
+  <script>
+  $(function () {
+    $('body').on('mouseup', function (event) {
+      var container = $('#ordering-info');
+      if (!container.is(event.target) && container.has(event.target).length === 0) {
+        $('body').removeClass('popover');
+      }
+    })
+
+    $('.order-this').click(function (event) {
+      $('body').addClass('popover');
+      console.log('hi')
+      event.stopImmediatePropagation();
+      return false;
+    });
+  })
+  </script>
+</body>
+</html>

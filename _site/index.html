@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Loren Bondurant</title>
+  <meta name="description" content="Letterforms and human forms">
+  <meta name="author" content="Loren Bondurant">
+  <link href='http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/bondurant.css" type="text/css">
+</head>
+<body id="">
+  <header>
+    <a id="title" href="/"><img src="http://farm9.staticflickr.com/8098/8574914381_4592d105dd.jpg"></a>
+
+    <nav role="navigation">
+      <ul>
+        <li><a class="calligraphy" href="/calligraphy">CALLIGRAPHY</a></li>
+        <li><a class="lettering" href="/lettering">LETTERING</a></li>
+        <li><a href="http://lorenbondurant.tumblr.com/">BLOG</a></li>
+        <li><a class="about" href="/about">ABOUT</a></li>
+        <li>CONTACT</li>
+        <li>STORE</li>
+      </ul>
+    </nav>
+  </header>
+
+  <script type="text/javascript">
+      window._idl = {};
+      _idl.variant = "modal";
+      (function() {
+          var idl = document.createElement('script');
+          idl.type = 'text/javascript';
+          idl.async = true;
+          idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+          document.getElementsByTagName('body')[0].appendChild(idl);
+      })();
+  </script>
+
+  <div id="red-line">&nbsp;</div>
+
+  <!-- <div id="about">
+    <p>Hello! I am a San Francisco-based letterer and illustrator. I believe in the power of tactile craftsmanship. You can view samples of my work here <a href="http://lorenbondurant.tumblr.com/tagged/commission">here</a>.
+    I accept commissions for projects ranging from wedding certificates, signage and book plate designs.  If you are interested in discussing a project, please <a href="mailto:loren.bondurant@gmail.com">contact me</a>.
+    Thanks for visiting.
+    <p>LOREN</p>
+  </div> -->
+
+  <div id="main">
+    <h1>Calligraphing</h1>
+
+  </div>
+
+  <footer style="text-align:center;">
+    <small>© Loren Bondurant <time datetime="2014">2014</time></p></small>
+  </footer>
+
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/underscore.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var imageHeight = 570;
+      $('#about-link').on('click', function () {
+        $('#about').toggleClass('active');
+        return false;
+      });
+
+      var splitEquals = function (str) {
+        return str.split("=");
+      }
+
+      var parseHash = function(hash) {
+        var subst = hash.substring(1).split('&');
+
+        var obj = _.object(_.map(subst, splitEquals));
+
+        if (!_.has(obj, 'left') && !_.has(obj, 'right')) {
+          obj = {'left':1,'right':1};
+        }
+        return obj;
+      }
+
+      var getCurrentImage = function (v,k) {
+        return k + '=' + ($('#' + k).find('.active').index() + 1);
+      }
+
+      var updateHash = function (obj) {
+        return _.map(obj, getCurrentImage).join('&');
+      }
+
+      var getActive = function (container, callback) {
+        var active = container.find('.active').first();
+        var images = container.find('.image');
+        var count = images.length;
+        return callback(container, active.index(), count);
+      }
+
+      var setActive = function(container, i) {
+        container.find('.image').eq(i).addClass('active');
+        container.find('.image').eq(i).siblings().removeClass('active');
+        container.find('.images').css('top', (i)*imageHeight * -1);
+      }
+
+      var getNext = function (container, index, count) {
+        return (index+1) % count;
+      }
+
+      var incrementCounter = function (container, number) {
+        container.find('.current').html(number+1);
+      }
+
+
+      var goToNext = function() {
+        var nextIndex = getActive($(this), getNext);
+        var next = $(this).find('.image').eq(nextIndex);
+        incrementCounter($(this), nextIndex);
+
+        console.log(nextIndex, next)
+
+        setActive($(this), nextIndex);
+
+        window.location.hash = updateHash(parseHash(window.location.hash));
+
+        return false;
+      }
+
+      var setImagesFromHash = function () {
+        var parsed = parseHash(window.location.hash);
+
+        _.each(parsed, function(v,k) {
+          setActive($('#'+k), parseInt(v)-1);
+          incrementCounter($('#' + k), parseInt(v)-1);
+        });
+      }
+
+      _.forEach(['#left','#right'], function(div) {
+        var images_count = $(div).find('.image').length;
+        $(div).find('.image').first().addClass('active');
+        $(div).find('.images').css('top',0);
+        $(div).find('.total').html(images_count);
+        $(div).click(goToNext);
+
+        if (window.location.hash.substring(1).length > 0) {
+          setImagesFromHash();
+        }
+      });
+
+    });
+  </script>
+
+  <!-- google analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36710433-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
