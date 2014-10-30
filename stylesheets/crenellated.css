@@ -1,0 +1,128 @@
+/* CRENELLATED STYLES */
+
+#crenellated {
+  font-family: 'Arvo', serif;
+  background: #DF2222;
+  color: #fff;
+}
+
+#crenellated header {
+  margin-bottom: 1em;
+}
+
+#crenellated header img {
+  width: 320px;
+}
+
+#crenellated h1 {
+  text-transform: uppercase;
+  font-size: 2.6em;
+}
+
+#crenellated h2 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.8em;
+}
+
+#crenellated h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+#crenellated a:hover {
+  background-color: #fff;
+  color: #DF2222;
+}
+
+#crenellated p {
+  margin: 0.1em 0;
+}
+
+.product-blurb {
+  position: relative;
+  max-width: 1000px;
+  margin: 2em auto 4em;
+  clear: both;
+  overflow-y: auto;
+}
+
+.product-blurb>div {
+  width: 48%;
+  float: left;
+  position: relative;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 500px;
+  margin: 0 auto;
+  display: block;
+}
+
+.product-blurb>div:nth-child(2) {
+  margin-left: 4%;
+}
+
+.product-blurb .order-this {
+  text-decoration: none;
+  float: right;
+  display: inline-block;
+  margin: 0.5em auto 0;
+  padding: 0.45em 0.75em;
+  background: #222;
+  color: #f9e71d;
+}
+
+#crenellated #ordering-info,
+.product-blurb .order-this:hover {
+  background: #f9e71d;
+  color: #222;
+}
+
+#crenellated #ordering-info {
+  padding: 1em;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 550px;
+  margin-left: -275px;
+  display: none;
+}
+
+#crenellated.popover #ordering-info {
+  display: block;
+}
+
+#crenellated .product-info {
+  background: #fff;
+  color: #222;
+  padding: 1em;
+}
+
+#crenellated .underline {
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+#crenellated #ordering-info p {
+  margin: 0.5em 0;
+}
+
+.small {
+  font-size: 12px;
+}
+
+#crenellated footer {
+  font-size: 12px;
+  text-align: center;
+  margin: 2em auto;
+}
+
+#crenellated footer p {
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
+}
