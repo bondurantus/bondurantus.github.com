@@ -124,6 +124,8 @@ nav ul li a {
 
 #main {
   overflow-y: auto;
+  background-color: #ccc;
+  padding: 0.5em 1.25em 1.25em;
 }
 
 #left, #right {
@@ -174,4 +176,64 @@ nav ul li a {
   -moz-transition: all .5s;
   transition: all .5s;
   width: 100%;
+}
+
+/* IMAGE STYLES */
+
+/* the picture of LB's mug */
+.lb-portrait {
+  float: left;
+  width: 230px;
+  margin: 15px 35px 20px 20px;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  transform: rotate(3deg);
+  -webkit-box-shadow: -14px -14px 0 #000000;
+  -moz-box-shadow: -14px -14px 0 #000000;
+  box-shadow: -14px -14px 0 #000000;
+}
+
+/* TYPOGRAPHY STYLES */
+
+/* Basic styling for heading elements that lie under the red line */
+#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
+  font-style: italic;
+  font-weight: normal;
+}
+
+#main h2 {
+  font-size: 2.6em;
+}
+
+#main a {
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 0.15em;
+}
+
+#main a:hover {
+  background-color: #FF0000;
+  color: #ffffff;
+}
+
+.smallcaps {
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+blockquote {
+  margin: 1em 0;
+}
+
+/* This is where to set the styling for the quote border and such */
+blockquote p {
+  padding: 0 0 0 0.75em;
+  margin: 0;
+  border-left: 2px solid #000000;
+}
+
+blockquote p.attribution {
+  border-left: none;
+  text-align: right;
 }
